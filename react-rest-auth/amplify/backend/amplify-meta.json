@@ -1,0 +1,114 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactrestauth-dev-133939-authRole",
+      "UnauthRoleArn": "arn:aws:iam::350135973898:role/amplify-reactrestauth-dev-133939-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::350135973898:role/amplify-reactrestauth-dev-133939-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-reactrestauth-dev-133939-deployment",
+      "UnauthRoleName": "amplify-reactrestauth-dev-133939-unauthRole",
+      "StackName": "amplify-reactrestauth-dev-133939",
+      "StackId": "arn:aws:cloudformation:us-east-1:350135973898:stack/amplify-reactrestauth-dev-133939/b0a31170-4e6e-11ee-82a9-0a292a50906d",
+      "AmplifyAppId": "d2ih93nbcb8fpj",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-reactrestauth-dev-133939-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    }
+  },
+  "auth": {
+    "reactrestauth41ad5ded": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-reactrestauth-dev-133939-deployment/amplify-cfn-templates/auth/reactrestauth41ad5ded-cloudformation-template.json",
+        "logicalId": "authreactrestauth41ad5ded"
+      },
+      "lastPushTimeStamp": "2023-09-08T17:58:28.677Z",
+      "output": {
+        "UserPoolId": "us-east-1_1LdiiCWUu",
+        "AppClientIDWeb": "4b67vmhrr4r8lobmblvta5od3h",
+        "AppClientID": "120ccctfpkpg98or1asrli7t71",
+        "IdentityPoolId": "us-east-1:e4dd4954-9893-4225-a42f-f9c6d8c877cd",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:350135973898:userpool/us-east-1_1LdiiCWUu",
+        "IdentityPoolName": "reactrestauth41ad5ded_identitypool_41ad5ded__dev",
+        "UserPoolName": "reactrestauth41ad5ded_userpool_41ad5ded"
+      },
+      "lastPushDirHash": "ZMMsXTfVOTntPu7n5Dxfi9KzSps="
+    }
+  },
+  "function": {
+    "reactrestauth47ce5fe7": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2023-09-08T17:56:25.214Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-09-08T17:56:25.234Z",
+      "distZipFilename": "reactrestauth47ce5fe7-50397a555a4a4b494352-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-reactrestauth-dev-133939-deployment",
+        "s3Key": "amplify-builds/reactrestauth47ce5fe7-50397a555a4a4b494352-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-reactrestauth-dev-133939-deployment/amplify-cfn-templates/function/reactrestauth47ce5fe7-cloudformation-template.json",
+        "logicalId": "functionreactrestauth47ce5fe7"
+      },
+      "lastPushTimeStamp": "2023-09-08T17:58:28.677Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::350135973898:role/reactrestauthLambdaRole7c5519e2-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:350135973898:function:reactrestauth47ce5fe7-dev",
+        "Name": "reactrestauth47ce5fe7-dev",
+        "LambdaExecutionRole": "reactrestauthLambdaRole7c5519e2-dev"
+      },
+      "lastPushDirHash": "HiyT5T/bqEoRqFgrCK/q6XiZLYA="
+    }
+  },
+  "api": {
+    "reactrestauthapi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "reactrestauth47ce5fe7",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-reactrestauth-dev-133939-deployment/amplify-cfn-templates/api/reactrestauthapi-cloudformation-template.json",
+        "logicalId": "apireactrestauthapi"
+      },
+      "lastPushTimeStamp": "2023-09-08T17:58:28.677Z",
+      "output": {
+        "ApiName": "reactrestauthapi",
+        "RootUrl": "https://dlegvvyxr6.execute-api.us-east-1.amazonaws.com/dev",
+        "ApiId": "dlegvvyxr6"
+      },
+      "lastPushDirHash": "lv/e+23CjuOxeGORdgWH5pb2cpE="
+    }
+  }
+}
