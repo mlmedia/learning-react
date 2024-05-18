@@ -59,6 +59,7 @@ samconfig.toml
 
 ### Amplify
 amplify/#current-cloud-backend
+amplify/#current-cloud-backend/*
 amplify/.config/local-*
 amplify/logs
 amplify/mock-data
